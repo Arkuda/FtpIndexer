@@ -8,7 +8,6 @@ import java.io.PrintWriter
 Created: Andrey Kiryantsev - reyzor2142@gmail.com, Jun 2018
  */
 
-
 fun main(args: Array<String>) {
 
     var ftp = FTPClient()
