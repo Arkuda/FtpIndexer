@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.ftp.indexer</groupId>
+    <groupId>kiryantsev.FtpIndexer</groupId>
     <artifactId>ftpindexer</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -97,8 +97,8 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>MainKt</mainClass>
-                            <packageName></packageName>
+                            <mainClass>main</mainClass>
+                            <packageName>kiryantsev.FtpIndexer</packageName>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix></classpathPrefix>
 
@@ -143,11 +143,11 @@
                             <descriptorRefs>
                                 <descriptorRef>jar-with-dependencies</descriptorRef>
                             </descriptorRefs>
-                            <finalName>helper-${project.version}</finalName>
+                            <finalName>FtpIndexer-${project.version}</finalName>
                             <appendAssemblyId>false</appendAssemblyId>
                             <archive>
                                 <manifest>
-                                    <mainClass>MainKt</mainClass>
+                                    <mainClass>kiryantsev.FtpIndexer.main</mainClass>
                                 </manifest>
                             </archive>
                         </configuration>
@@ -156,6 +156,15 @@
                 </executions>
             </plugin>
 
+
+            <plugin>
+                <artifactId>maven-jlink-plugin</artifactId>
+                <version>3.0.0-alpha-1</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <!-- configuration elements goes here -->
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
