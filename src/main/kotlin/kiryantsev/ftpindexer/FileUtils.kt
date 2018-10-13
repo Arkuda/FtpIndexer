@@ -4,6 +4,7 @@ import javafx.stage.FileChooser
 import javafx.stage.Stage
 import org.apache.commons.net.ftp.FTPFile
 import java.io.BufferedWriter
+import java.io.File
 import java.io.FileWriter
 import java.io.PrintWriter
 import java.text.SimpleDateFormat
@@ -42,11 +43,12 @@ class FileUtils(var fileName: String, var filetype: String = FILE_TYPE.TEXT_FILE
     }
 
 
-    fun loadListIPFromFile():List<String>{
-        var chooser = FileChooser()
-        chooser.title = "Choose file with ip's"
-        var selectedFile = chooser.showOpenDialog(Stage())
-        return selectedFile.readText().split(";")
+    fun loadListIPFromFile():MutableList<String>{
+        var file = File(fileName)
+        if(file.exists()&&file.canRead()){
+            return file.readText().split(";").toMutableList()
+        }
+        return mutableListOf()
     }
 
 }

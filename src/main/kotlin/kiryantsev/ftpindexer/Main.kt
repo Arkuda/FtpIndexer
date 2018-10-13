@@ -88,19 +88,18 @@ class Main{
 
                     listOfIPS.forEach {
                         println("Start index $it")
-                        var ftp = FTPController(it, PORT)
-                        var res = ftp.scan()
-                        var searcher = SearchUtils(ftp.ftp,res)
+                        val ftp = FTPController(it, PORT)
+                        val res = ftp.scan()
+                        val searcher = SearchUtils(ftp.ftp,res)
                         searcher.loadDefaultFilter()
-                        var intresStuff = searcher.getIntrestStuff()
+                        val intresStuff = searcher.getIntrestStuff()
 
-                        var fu = FileUtils(it,MODE)
+                        val fu = FileUtils(it,MODE)
                         fu.writeString("INTREST STUFF")
                         fu.writeListToFile(intresStuff.toMutableList())
                         fu.writeString("\nOTHER")
                         fu.writeListToFile(res)
                         println("Done for $it")
-
                     }
 
 
