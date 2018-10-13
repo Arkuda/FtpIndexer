@@ -4,11 +4,15 @@ Small ftp indexer written in kotlin + apache.commons.net
 
 ---
 To run jar execute
-`java -jar indexer.jar ip`
-where `ip` is ip address of server. On default - port is 21
+`java -jar indexer.jar args`
 
-When is runned - in console showing full paths to all files, and kiryantsev.FtpIndexer.write it to file called `ip.txt`, where ip - is ip address
-
+Help arguments:\
+`-ip=X`     To set ip of server to index\
+`-p=X`      To set port of server\
+`-o=tbl`  Exit file to be csv table\
+`-o=txt`  Exit file to be txt, default method\
+`-l=X`    File with ip's \
+`-d`      Full log
 ---
-To build project into jar file run
+To build project into jar file run\
 `mvn jar:jar`
